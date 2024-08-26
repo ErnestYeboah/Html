@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Abel&family=Big+Shoulders+Inline+Text&family=Bellefair&family=Cantata+One&family=Cormorant+Upright&family=Akaya+Kanadaka&family=Alice&family=Big+Shoulders+Stencil+Display&family=Corben&family=Croissant+One&family=Dynalight&family=Fira+Sans&family=Open+Sans&family=Explora&Jim+Nightshade&family=Medula+One&family=Satoshi&family=Inter&family=Mulish&family=Metal+Mania&family=Nova+Cut&family=UnifrakturMaguntia&family=Coda&family=Charm&family=Cookie&family=Felipa&family=Delius&family=Alex+Brush&family=Arsenal&family=Antonio:wght@100..700&family=Arapey:ital@0;1&family=Aref+Ruqaa:wght@400;700&family=Asul:wght@400;700&family=Bebas+Neue&family=Cardo:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Figtree&family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Cinzel+Decorative&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster+Two&family=Amita&family=Berkshire+Swash&family=Alfa+Slab+One&family=Orbitron&family=Abril+Fatface&family=Great+Vibes&family=Pacifico&family=Whisper&family=Satisfy&family=Dorsa&family=Exo&family=Farro&family=Montserrat+Alternates&family=Advent+Pro&family=Gotu&family=Jua&family=Laila&family=Notable&family=Proza+Libre&family=Marvel&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Emoji:wght@300..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Pattaya&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rum+Raisin&family=Sarpanch&family=Stick+No+Bills&family=Ubuntu&family=ZCOOL+XiaoWei&family=Rouge+Script&family=Quintessential&display=swap");
+
+:root {
+  --primary-clr: #f2f2f2;
+  --accent-clr: hsl(216, 83%, 12%);
+  --light-clr: #adcdb9;
+  // --light-clr: #2474a6;
+  --text-clr: #2e2e2e;
+
+  --padding-inline: 6cqi;
+
+  --p-font: poppins;
+  --heading-font: Libre Baskerville;
+
+  --min-padding: 2cqi;
+  --margin-down: 0.5rem;
+
+  --gap: 1rem;
+  --extra-gap: 2rem;
+
+  --fast: 500ms;
+  --smooth: 1000ms;
+
+  --radius: 0.5rem 0.2rem 0.5rem 0.2rem;
+
+  --step-small: clamp(0.7rem, 3vw, 1rem);
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+  --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+  --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+  --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+}

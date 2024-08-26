@@ -1,0 +1,215 @@
+@use "components/_styles.scss" as *;
+
+//dynamic classes
+.center-text {
+  align-content: center;
+}
+
+.highlight {
+  color: var(--accent-clr);
+}
+
+[data-id="center-heading"] {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+//end of dynamic classes
+
+.logo {
+  width: min(170px, 55%);
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--heading-font);
+  font-size: clamp(0.9rem, 3vw, 1rem);
+}
+
+div:has(.logo) {
+  display: flex;
+
+  img {
+    width: 80px;
+    object-position: top;
+    height: 40px;
+  }
+}
+
+nav {
+  text-transform: uppercase;
+}
+
+header {
+  overflow: clip;
+  background-color: hsla(from var(--accent-clr) h s l / 0.9);
+  background-blend-mode: multiply;
+  background-image: url("/images/plumbing1.jpg");
+  color: var(--primary-clr);
+  padding: var(--min-padding) var(--padding-inline);
+  align-content: center;
+  @include clipPath;
+  position: relative;
+
+  &::before {
+    background-color: hsla(from var(--light-clr) h calc(s * 0.3) l / 0.2);
+    inset: 0;
+    left: 80%;
+    transform: skewX(-45deg);
+  }
+
+  > * {
+    opacity: 0;
+    translate: -2rem 0;
+    animation: fade-in 800ms linear forwards;
+  }
+}
+
+//Loop
+@for $i from 1 through 3 {
+  header > :nth-child(#{$i}) {
+    animation-delay: $i * 500ms;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+    translate: 0;
+  }
+}
+
+h1 {
+  font-size: var(--step-5);
+  font-family: var(--heading-font);
+}
+
+button[data-type="cta"] {
+  margin-top: var(--gap);
+  --btn-bg: var(--light-clr);
+  --link-clr: var(--text-clr);
+}
+
+.services-sec {
+  background-color: var(--accent-clr);
+  // background-image: url("/images/plumbing7.jpg");
+  background-blend-mode: multiply;
+  background-size: 100% 100%;
+  background-position: right;
+  padding: var(--padding-inline);
+  color: var(--primary-clr);
+  @include clipPath;
+}
+
+.services-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  @include xtra-gap;
+}
+
+.card {
+  border-radius: var(--radius);
+  padding-block-end: var(--min-padding);
+  border-bottom: 2px outset var(--light-clr);
+  box-shadow: 4px 0px 4px rgba(0 0 0 /0.1);
+  --img-height: 20vh;
+  container-type: inline-size;
+
+  & h3 {
+    margin-top: 1rem;
+  }
+
+  & p,
+  & h3 {
+    padding-inline: var(--min-padding);
+  }
+}
+
+@media (width > 992px) {
+  nav {
+    display: grid;
+    grid-template-columns: 300px 1fr 120px;
+    gap: 1rem;
+    align-items: center;
+    min-height: 3rem;
+    padding-inline: var(--min-padding);
+
+    .menu-list {
+      display: flex;
+      justify-items: start;
+      justify-content: space-evenly;
+    }
+
+    .services {
+      position: relative;
+
+      &-list {
+        position: absolute;
+        top: 2.3rem;
+        left: -1rem;
+        // background-color: var(--primary-clr);
+        padding: 1em 1.4em;
+        border-bottom-right-radius: 1rem;
+        font-size: var(--step-1);
+        text-wrap: nowrap;
+        line-height: 2;
+        font-weight: 300;
+        font-family: inherit;
+        scale: 1 var(--scale, 0);
+        transform-origin: top;
+        transition: scale var(--fast);
+        --link-clr: var(--primary-clr);
+        backdrop-filter: blur(25px);
+        box-shadow: 0px 4px 4px rgba(0 0 0 /0.2);
+        z-index: 1;
+
+        > a:hover,
+        a:focus-visible {
+          scale: 1.1;
+        }
+      }
+
+      &:hover {
+        --scale: 1;
+      }
+    }
+  }
+
+  .intro-sec {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include xtra-gap;
+    padding-right: 0;
+    --no-margin-top: 0;
+
+    > * {
+      grid-column: span 2;
+      --img-height: 100%;
+    }
+
+    [data-type="images-grid"] {
+      display: grid;
+      grid-template-columns: subgrid;
+      gap: var(--gap);
+      grid-auto-rows: 35vh;
+      margin-top: -6rem;
+      z-index: 1;
+
+      > * * {
+        border-radius: var(--radius);
+        box-shadow: 0px 4px 4px rgba(0 0 0 /0.4);
+      }
+
+      & :nth-child(1n + 2) {
+        height: 80%;
+      }
+
+      & :nth-child(even) {
+        margin-top: 2rem;
+      }
+
+      > :first-child {
+        grid-row: span 2;
+      }
+    }
+  }
+}

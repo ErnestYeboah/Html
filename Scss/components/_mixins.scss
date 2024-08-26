@@ -1,0 +1,15 @@
+@mixin gap {
+  gap: 1rem;
+}
+
+@mixin xtra-gap {
+  gap: 2rem;
+}
+
+@mixin outline {
+  outline: 1px solid red;
+}
+
+@mixin clipPath {
+  clip-path: polygon(100% 0, 100% 90%, 0 98%, 0 0);
+}

@@ -1,0 +1,103 @@
+header {
+  min-height: 90vh;
+  background-color: var(--accent-clr);
+}
+
+a {
+  color: var(--link-clr, var(--text-clr));
+  font-size: var(--step-small);
+  text-decoration: none;
+  font-family: var(--p-font);
+  display: block;
+  transition: scale var(--fast);
+}
+
+h2,
+h3 {
+  font-family: var(--heading-font);
+  margin-bottom: var(--margin-down);
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: var(--step-2);
+  position: relative;
+  padding-left: 2.5rem;
+  line-height: 1;
+
+  &::before {
+    width: 40px;
+    aspect-ratio: 1;
+    // background-color: red;
+    background-image: url("/images/Photoroom-20240824_151350.png");
+    background-size: cover;
+    background-position: top;
+    position: absolute;
+    left: 0;
+    top: -0.4rem;
+  }
+}
+
+h3 {
+  font-size: var(--step-0);
+}
+
+main {
+  padding-block-end: var(--padding-inline);
+}
+
+section {
+  margin-top: var(--no-margin-top, var(--padding-inline));
+  padding-inline: var(--padding-inline);
+}
+
+p {
+  width: min(100%, 50ch);
+  font-size: var(--step-0);
+  font-family: var(--p-font);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+button {
+  border: none;
+  padding: 0.5em 1em;
+  background-color: var(--btn-bg, var(--accent-clr));
+  color: var(--btn-txt, var(--primary-clr));
+  font-size: var(--step-small);
+  font-family: inherit;
+  border-radius: var(--radius);
+  --link-clr: var(--primary-clr);
+  transition: var(--fast);
+  white-space: nowrap;
+}
+
+button:hover,
+button:focus {
+  scale: 1.1;
+}
+
+@media (width > 992px) {
+  [data-type="head-link"] {
+    position: relative;
+    isolation: isolate;
+    transition: var(--fast);
+
+    :is(&:hover, &:focus):not([aria-current="page"]) {
+      scale: 1.1;
+    }
+  }
+
+  [aria-current="page"] {
+    --link-clr: var(--primary-clr);
+
+    &::before {
+      background-color: var(--accent-clr);
+
+      inset: -1rem;
+      z-index: -1;
+      transition: var(--fast);
+      pointer-events: none;
+    }
+  }
+}

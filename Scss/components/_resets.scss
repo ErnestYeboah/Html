@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: var(--bg-pos, center);
+  background-repeat: no-repeat;
+}
+
+html {
+  // color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: var(--img-height);
+  border-radius: var(--img-radius, var(--radius));
+}
+
+body {
+  background-color: var(--primary-clr);
+  color: #2e2e2e;
+}
+
+::before,
+::after {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+}
